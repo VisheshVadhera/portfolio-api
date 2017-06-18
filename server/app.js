@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var dbConfig = require('../config/dbConfig.json');
 
 
-mongoose.connect(dbConfig.dbStringProd);
+mongoose.connect(process.env.DBURL);
 mongoose.connection.on('connected', function () {
     console.log('Mongoose default connection open');
 })
