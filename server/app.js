@@ -29,8 +29,8 @@ require('./express')(app);
 require('./routes')(app);
 
 
-app.listen(3000, function () {
-    console.log('Smallcase Portfolio API listening on 3000!')
+app.listen(process.env.PORT, function () {
+    console.log('Smallcase Portfolio API listening')
 })
 
 module.exports = app;
