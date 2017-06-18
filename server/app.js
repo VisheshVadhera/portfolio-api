@@ -1,13 +1,11 @@
 
 var express = require('express');
 var mongoose = require('mongoose');
-var dbConfig = require('../config/dbConfig.json');
-
 
 mongoose.connect(process.env.DBURL);
 mongoose.connection.on('connected', function () {
     console.log('Mongoose default connection open');
-})
+});
 mongoose.connection.on('error', function (err) {
     console.error.bind(console, 'Mongoose connection error');
     process.exit(-1);
