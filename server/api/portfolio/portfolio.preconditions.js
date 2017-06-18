@@ -7,7 +7,7 @@ module.exports.checkAddTradePreconditions = function (req, res, next) {
 
     //Following keys must be present in the json sent by the user.
     if (!_.has(input, 'tradeType') || !_.has(input, 'price') ||
-        _.has(input, 'count') || _.has(input, 'stock.name') || _.has(input, 'stock.symbol')) {
+        !_.has(input, 'count') || !_.has(input, 'stock.name') || !_.has(input, 'stock.symbol')) {
         return res.status(422).send(errorFactory.createError("Some fields are missing."));
     }
 
