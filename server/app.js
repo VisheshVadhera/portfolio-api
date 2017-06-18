@@ -1,8 +1,10 @@
 
 var express = require('express');
 var mongoose = require('mongoose');
+var dbConfig = require('../config/dbConfig.json');
 
-mongoose.connect('mongodb://127.0.0.1:27017/portfolio');
+
+mongoose.connect(dbConfig.dbString);
 mongoose.connection.on('connected', function () {
     console.log('Mongoose default connection open');
 })
