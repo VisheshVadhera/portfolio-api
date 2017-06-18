@@ -2,7 +2,7 @@
 var supertest = require('supertest');
 var app = require('../../server/app');
 
-describe('Testing GET /portfolio ', function () {
+describe('Testing portfolio endpoints', function () {
 
     /*it('Should respond with a 200', function (done) {
 
@@ -18,11 +18,12 @@ describe('Testing GET /portfolio ', function () {
             })
     });*/
 
-    it('Delete successfully', function (done) {
+    /*it('Delete successfully', function (done) {
 
         supertest(app)
-            .post('/api/portfolio/removeTrade/594609bbbd7e4175b7e85ccd')
+            .post('/api/portfolio/removeTrade/')
             .set('Accept', 'application/json')
+            .expect(200)
             .end(function (err, res) {
 
                 if (err) return done(err);
@@ -31,7 +32,7 @@ describe('Testing GET /portfolio ', function () {
                 done();
             })
 
-    });
+    });*/
 
     /*it('Successful addition of the trade', function (done){
 
@@ -39,10 +40,10 @@ describe('Testing GET /portfolio ', function () {
             .post('/api/portfolio/addTrade')
             .send({
                 tradeType: "BUY",
+                count: 100,
+                price: 1500,
                 stock: {
-                    name: "Facebook",
-                    symbol: "FACEBK",
-                    price: 15.6
+                    name: "HDFC"
                 }
             })
             .expect(200)
@@ -50,20 +51,20 @@ describe('Testing GET /portfolio ', function () {
 
                 if(err) return done(err);
 
-                console.log(res);
                 done();
             });
 
     });*/
 
-    /*it('Successfully updating the trade', function (done){
+    it('Successfully updating the trade', function (done){
 
         supertest(app)
             .post('/api/portfolio/updateTrade')
             .send({
-                _id: "5944fe206f338315e6e3bae4",
+                _id: "594609bbbd7e4175b7e85cc7",
                 tradeType: "BUY",
-                price: 13.4
+                price: 1640,
+                count: 100
             })
             .expect(200)
             .end(function (err, res){
@@ -73,7 +74,7 @@ describe('Testing GET /portfolio ', function () {
                 console.log(res);
                 done();
             });
-    })*/
+    })
 
     /*it('Successfully get returns', function (done){
 

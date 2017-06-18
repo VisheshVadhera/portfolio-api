@@ -13,4 +13,4 @@ router.get('/portfolio/holdings', controller.getHoldings);
 
 router.post('/portfolio/addTrade', preconditions.checkAddTradePreconditions ,controller.addTrade);
 router.post('/portfolio/updateTrade/', preconditions.checkUpdateTradePreconditions, controller.updateTrade);
-router.post('/portfolio/removeTrade/:tradeId', preconditions.checkRemoveTradePreconditions, controller.removeTrade);
+router.post('/portfolio/removeTrade/:tradeId', controller.removeTrade);
