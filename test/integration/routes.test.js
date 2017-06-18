@@ -1,6 +1,3 @@
-/**
- * Created by vishesh on 17/6/17.
- */
 
 var supertest = require('supertest');
 var app = require('../../server/app');

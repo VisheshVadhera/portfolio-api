@@ -1,6 +1,3 @@
-/**
- * Created by vishesh on 14/6/17.
- */
 
 var express = require('express');
 var mongoose = require('mongoose');

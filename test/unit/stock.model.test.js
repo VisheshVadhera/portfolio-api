@@ -1,6 +1,4 @@
-/**
- * Created by vishesh on 17/6/17.
- */
+
 
 var expect = require('chai').expect;
 

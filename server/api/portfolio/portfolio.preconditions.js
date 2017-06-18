@@ -1,6 +1,3 @@
-/**
- * Created by vishesh on 18/6/17.
- */
 
 var _ = require('lodash');
 var errorFactory = require('../../utils/errorFactory');
