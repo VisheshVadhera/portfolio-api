@@ -26,9 +26,9 @@ module.exports.getPortfolio = function (req, res) {
 
             if (err) return res.status(500).send(errorFactory.createError("Unable to get portfolio."));
 
-            res.send(portfolio);
+            res.status(200).send(portfolio);
         })
-}
+};
 
 module.exports.removeTrade = function (req, res) {
 
@@ -55,7 +55,7 @@ module.exports.removeTrade = function (req, res) {
                 res.status(200).send("Trade with id " + tradeId + " has been removed");
             });
     });
-}
+};
 
 module.exports.addTrade = function (req, res) {
 
@@ -192,7 +192,7 @@ module.exports.getHoldings = function (req, res) {
 
             res.status(200).send(holdings);
         });
-}
+};
 
 function getFlattenedTrades(trades) {
 

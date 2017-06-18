@@ -9,7 +9,8 @@ describe('Trade', function () {
 
         var trade = new Trade({
             price: 2.3,
-            stock: "41224d776a326fb40f000001"
+            stock: "41224d776a326fb40f000001",
+            count: 100
         });
 
         trade.validate(function (err) {
@@ -23,7 +24,8 @@ describe('Trade', function () {
         var trade = new Trade({
             tradeType: 'ABC',
             price: 2.3,
-            stock: "41224d776a326fb40f000001"
+            stock: "41224d776a326fb40f000001",
+            count: 100
         });
 
         trade.validate(function (err) {
@@ -36,7 +38,8 @@ describe('Trade', function () {
 
         var trade = new Trade({
             tradeType: 'BUY',
-            stock: "41224d776a326fb40f000001"
+            stock: "41224d776a326fb40f000001",
+            count: 100
         });
 
         trade.validate(function (err) {
@@ -50,7 +53,8 @@ describe('Trade', function () {
         var trade = new Trade({
             tradeType: 'BUY',
             stock: "41224d776a326fb40f000001",
-            price: -3
+            price: -3,
+            count: 100
         });
 
         trade.validate(function (err) {
@@ -63,7 +67,8 @@ describe('Trade', function () {
 
         var trade = new Trade({
             tradeType: 'BUY',
-            price: 2.3
+            price: 2.3,
+            count: 100
         });
 
         trade.validate(function (err) {
@@ -72,12 +77,28 @@ describe('Trade', function () {
         });
     });
 
-    it('should be valid for a valid tradeType, price and stock', function (done) {
+    it('should be invalid if count is absent', function (done) {
 
         var trade = new Trade({
             tradeType: 'BUY',
             price: 2.3,
             stock: "41224d776a326fb40f000001"
+        });
+
+        trade.validate(function (err) {
+            expect(err.errors.count).to.exist;
+            done();
+        });
+
+    })
+
+    it('should be valid for a valid tradeType, price and stock', function (done) {
+
+        var trade = new Trade({
+            tradeType: 'BUY',
+            price: 2.3,
+            stock: "41224d776a326fb40f000001",
+            count: 100
         });
 
         trade.validate(function (err) {
